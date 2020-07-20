@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="detail"></div>
+
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/global.js"></script>
+    <script>
+      $(() => {
+        const { search } = window.location;
+
+        $.get(`/api/blog/detail${search}`, ({ data }) => {
+          console.log(data);
+          let detail = `
+            <h3>${data.title}</h3>
+            <div>
+              <span>${data.author}</span>
+              <span>${getDate(data.createtime)}</span>
+            </div>
+            <hr />
+            <p>${data.content}</p>
+          `;
+          $("#detail").html(detail);
+        });
+      });
+    </script>
+  </body>
+</html>

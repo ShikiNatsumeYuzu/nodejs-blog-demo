@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <span>用户名</span>
+      <input type="text" id="username" />
+      <span>密码</span>
+      <input type="password" id="password" />
+      <button id="login">登录</button>
+    </div>
+
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script>
+      $(() => {
+        $("#login").click(() => {
+          const username = $("#username").val();
+          const password = $("#password").val();
+
+          $.ajax({
+            url: "/api/user/login",
+            contentType: "application/json",
+            type: "post",
+            data: JSON.stringify({ username, password }),
+            success: ({ message }) => alert(message)
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

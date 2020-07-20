@@ -1,0 +1,13 @@
+**/blog-1/node_modules
+
+**/html/node_modules
+
+/mysql
+
+/promise
+
+/redis
+
+/file
+
+/stream

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+
+      span,
+      #author {
+        color: darkgray;
+      }
+
+      #title {
+        display: block;
+        font-size: 20px;
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="allList">博客列表</h1>
+    <hr />
+    <div id="list"></div>
+
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js//global.js"></script>
+    <script>
+      $(() => {
+        const { search } = window.location;
+
+        function getList(url) {
+          $.get(url, ({ data }) => {
+            let list = "";
+            $.each(data, (index, item) => {
+              console.log(item);
+              list += `
+              <div>
+                <a href="./detail.html?id=${item.id}" id="title">
+                  ${item.title}
+                </a>
+                <div>
+                  <a href="./index.html?author=${item.author}" id="author">
+                    ${item.author}
+                  </a>
+                  <span>${getDate(item.createtime)}</span>
+                </div>
+              </div>
+              <hr/>
+            `;
+            });
+            $("#list").html(list);
+          });
+        }
+
+        if (search) {
+          getList(`/api/blog/list${search}`);
+        } else {
+          getList("/api/blog/list");
+        }
+      });
+    </script>
+  </body>
+</html>
