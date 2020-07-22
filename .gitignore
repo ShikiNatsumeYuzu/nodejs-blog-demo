@@ -1,4 +1,6 @@
-**/blog-1/node_modules
+**/blog/node_modules
+
+**/blog-express/node_modules
 
 **/html/node_modules
 
@@ -11,3 +13,5 @@
 /file
 
 /stream
+
+/express-test
