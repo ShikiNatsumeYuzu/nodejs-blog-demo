@@ -13,3 +13,4 @@ GET -- /api/blog/list -- Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 POST -- /api/user/login -- PostmanRuntime/7.26.1 -- 1595237466440
 POST -- /api/user/login -- PostmanRuntime/7.26.1 -- 1595237562629
 POST -- /api/user/login -- PostmanRuntime/7.26.1 -- 1595237575258
+GET -- /api/blog/list?isadmin=1 -- PostmanRuntime/7.26.2 -- 1595578442069

@@ -2,6 +2,8 @@
 
 **/blog-express/node_modules
 
+**/blog-koa2/node_modules
+
 **/html/node_modules
 
 /mysql
@@ -15,5 +17,7 @@
 /stream
 
 /express-test
+
+/koa2-test
 
 /lib
