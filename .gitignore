@@ -6,6 +6,8 @@
 
 **/html/node_modules
 
+**/pm2/node_modules
+
 /mysql
 
 /promise
